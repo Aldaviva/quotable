@@ -13,9 +13,9 @@
 	<body>
 		<h1><%= @paperName %></h1>
 
-		<div class='quotes'>
+		<div class='quotations'>
 			<% for @quotation in quotations %>
-				<figure class='quote'>
+				<figure class='quotation'>
 					<div>
 						<div class="date">
 							<%= @quotation['date'].localtime.strftime("%b. %e, %l:%M %P") %>
@@ -29,9 +29,9 @@
 			<% end %>
 		</div>
 
-		<form class="addQuote hidden" method="post">
+		<form class="addQuotation hidden" method="post">
 			<!-- <div class="revealer"> -->
-				<a class="revealer submitLink" href="#">Submit a quotation</a>
+				<a class="revealer" href="#">Submit a quotation</a>
 			<!-- </div> -->
 
 			<textarea name="body" rows="3" placeholder="What was said?"></textarea>

@@ -1,6 +1,6 @@
 (function(){
 
-	var form = $$("form.addQuote")[0];
+	var form = $$("form.addQuotation")[0];
 
 	function revealForm(){
 		form.removeClass('hidden');
@@ -32,11 +32,18 @@
 
 	form.addEvent('submit', onSubmitForm);
 
-	var revealerLink = $$('form.addQuote .revealer');
+	var revealerLink = $(form).getElement('.revealer');
 
 	revealerLink.addEvent('click', function(e){
 		revealForm();
 		return false;
 	});
+
+	var submitLink = form.getElement('.submitLink');
+
+	submitLink.addEvent('click', function(e){
+		form.fireEvent('submit');
+		return false;
+	})
 
 })();

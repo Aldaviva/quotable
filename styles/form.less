@@ -1,4 +1,4 @@
-form.addQuote {
+form.addQuotation {
 
 	border-top : 4px solid @dark_gray;
 	bottom     : 0;
@@ -9,7 +9,7 @@ form.addQuote {
 	text-align : right;
 
 	&.hidden {
-		.revealer.submitLink {
+		.revealer {
 			display: block;
 		}
 
@@ -18,13 +18,17 @@ form.addQuote {
 		}
 	}
 
-	.revealer.submitLink {
+	.revealer {
 		display : none;
 	}
 
 	.submitLink {
+		display: inline-block;
+	}
+
+	.submitLink, .revealer {
 		color       : @dark_gray;
-		display     : inline-block;
+		/*display     : inline-block;*/
 		font-size   : 34px;
 		line-height : 96px;
 		padding     : 0 22px;
