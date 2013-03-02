@@ -1,0 +1,50 @@
+form.addQuote {
+
+	border-top : 4px solid @dark_gray;
+	bottom     : 0;
+	color      : @dark_gray;
+	left       : 0;
+	position   : fixed;
+	right      : 0;
+	text-align : right;
+
+	&.hidden {
+		.revealer.submitLink {
+			display: block;
+		}
+
+		textarea, input, a {
+			display: none;
+		}
+	}
+
+	.revealer.submitLink {
+		display : none;
+	}
+
+	.submitLink {
+		color       : @dark_gray;
+		display     : inline-block;
+		font-size   : 34px;
+		line-height : 96px;
+		padding     : 0 22px;
+
+		&:hover {
+			background-color : fade(white, 30%);
+			color            : @dark_red;
+		}
+
+		&::after {
+			content     : '≥';
+			display     : inline-block;
+			font-family : 'Historical English Textura';
+			font-size   : 55px;
+			height      : 0;
+			left        : -1em;
+			margin-left : 1em + 0.25em;
+			position    : relative;
+			top         : 5px;
+			width       : 0;
+		}
+	}
+}

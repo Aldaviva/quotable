@@ -28,5 +28,19 @@
 				</figure>
 			<% end %>
 		</div>
+
+		<form class="addQuote hidden" method="post">
+			<!-- <div class="revealer"> -->
+				<a class="revealer submitLink" href="#">Submit a quotation</a>
+			<!-- </div> -->
+
+			<textarea name="body" rows="3" placeholder="What was said?"></textarea>
+			<input name="author" type="text" placeholder="Who said it?"></input>
+			<a class="submitLink" href="#">Fire it off</a>
+			<!-- <input type="submit" value="Fire it off"></input> -->
+		</form>
+
+		<script src="media/scripts/lib/mootools-core-1.4.5-full-nocompat-yc.js" type="text/javascript"></script>
+		<script src="media/scripts/list.js" type="text/javascript"></script>
 	</body>
 </html>

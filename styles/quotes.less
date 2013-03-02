@@ -1,0 +1,81 @@
+@border_spacing_horiz: 200px;
+
+.quotes {
+	/*margin: 0 70px 0;*/
+	position: fixed;
+	overflow: auto;
+	top: 221px;
+	left: 0;
+	right: 0;
+	bottom: 100px;
+	padding: 0 (@border_spacing_horiz + 70px);
+}
+
+.quote {
+	@quote_padding_horiz: 40px;
+
+	color    : @dark_red;
+	padding  : 48px @quote_padding_horiz;
+	position : relative;
+	
+	> div {
+		margin: 0 (-1 * @border_spacing_horiz);
+	}
+
+	+ .quote {
+		border-top: 1px solid rgba(0, 0, 0, 0.33);
+	}
+
+	&:nth-child(2n) {
+		color: @dark_blue;
+	}
+
+	blockquote {
+		font-size   : 36px;
+		line-height : 1.27em;
+
+		&::before, &::after {
+			font-size : 1.8em;
+			height    : 0px;
+			position  : relative;
+			width     : 0px;
+		}
+
+		&::before {
+			content : "“";
+			float   : left;
+			left    : -36px;
+			top     : 4px;
+		}
+		&::after {
+			content : '”';
+			display : inline-block;
+			left    : 8px;
+			top     : 14px;
+		}
+	}
+
+	figcaption, .date {
+		font-family : 'Didot M06 Medium';
+		font-style  : italic;
+	}
+
+	figcaption {
+		font-size  : 26px;
+		margin-top : 0.7em;
+		opacity    : 0.70;
+
+		&::before {
+			content: "— ";
+		}
+	}
+
+	.date {
+		float        : right;
+		font-size    : 20px;
+		margin-left  : 2em;
+		margin-right : -0.5 * @quote_padding_horiz;
+		margin-top   : 0.6em;
+		opacity      : 0.50;
+	}
+}
