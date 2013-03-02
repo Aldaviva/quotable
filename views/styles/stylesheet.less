@@ -1,0 +1,97 @@
+@import 'views/styles/reset';
+@import 'views/styles/fonts';
+
+body {
+	background: white url('media/images/background.jpg') no-repeat 0 0;
+	background-size: 100% auto;
+}
+
+h1 {
+	font-family: 'Historical English Textura';
+	color: #1f2429;
+	text-align: center;
+	font-size: 75px;
+	line-height: 217px;
+	max-height: 217px;
+	overflow: hidden;
+}
+
+@border_spacing_horiz: 200px;
+
+.quotes {
+	margin: 20px 70px 0;
+	padding: 0 @border_spacing_horiz;
+}
+
+.quote {
+	@quote_padding_horiz: 40px;
+	padding: 48px @quote_padding_horiz;
+	color: #2e1717;
+	position: relative;
+	
+	> div {
+		margin: 0 (-1 * @border_spacing_horiz);
+	}
+
+	+ .quote {
+		border-top: 1px solid rgba(0, 0, 0, 0.33);
+	}
+
+	&:nth-child(2n) {
+		color: #001c2e;
+	}
+
+	blockquote {
+		font-family: 'Mercury Text G4 Semibold';
+		font-size: 36px;
+		line-height: 1.27em;
+
+		&::before, &::after {
+			font-size: 1.8em;
+			height: 0px;
+			position: relative;
+			width: 0px;
+		}
+
+		&::before {
+			content: "“";
+			float: left;
+			left: -36px;
+			top: 4px;
+		}
+		&::after {
+			content: '”';
+			display: inline-block;
+			left: 8px;
+			top: 14px;
+		}
+	}
+
+	figcaption, .date {
+		font-family: 'Didot M06 Medium';
+		font-style: italic;
+		/*font-family: 'Verlag Book Italic';*/
+	}
+
+	figcaption {
+		font-size: 26px;
+		opacity: 0.70;
+		margin-top: 0.7em;
+
+		&::before {
+			content: "— ";
+		}
+	}
+
+	.date {
+		float: right;
+		/*position: absolute;*/
+		/*top: 3.0em;*/
+		/*right: 0;*/
+		margin-left: 2em;
+		margin-top: 0.6em;
+		margin-right: -0.5 * @quote_padding_horiz;
+		opacity: 0.50;
+		font-size: 20px;
+	}
+}

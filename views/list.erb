@@ -1,0 +1,32 @@
+<% @paperName = randomPaperName %>
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title><%= @paperName %></title>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<h1><%= @paperName %></h1>
+
+		<div class='quotes'>
+			<% for @quotation in quotations %>
+				<figure class='quote'>
+					<div>
+						<div class="date">
+							<%= @quotation['date'].localtime.strftime("%b. %e, %l:%M %P") %>
+						</div>
+
+						<blockquote><%= ERB::Util::h(@quotation['body']).gsub(/\n/, "<br />") %></blockquote>
+
+						<figcaption><%= ERB::Util::h(@quotation['author']) %></figcaption>
+					</div>
+				</figure>
+			<% end %>
+		</div>
+	</body>
+</html>
