@@ -5,6 +5,10 @@
 @border_spacing_horiz    : 200px;
 @quotation_spacing_horiz : 70px;
 
+a {
+	text-decoration: none;
+}
+
 body {
 	background      : white url('media/images/background.jpg') no-repeat 0 0;
 	background-size : 100% auto;
@@ -12,12 +16,24 @@ body {
 }
 
 h1 {
-	color       : @dark_gray;
-	font-family : 'Historical English Textura';
-	font-size   : 75px;
-	line-height : 217px;
-	max-height  : 217px;
-	overflow    : hidden;
-	text-align  : center;
-	margin-bottom: 4px;
+	color         : @dark_gray;
+	cursor        : pointer;
+	font-family   : 'Historical English Textura';
+	font-size     : 75px;
+	line-height   : 217px;
+	margin-bottom : 4px;
+	/*max-height    : 217px;*/
+	/*overflow      : hidden;*/
+	padding: 0 0.8em;
+	visibility: hidden;
+	text-align    : center;
+}
+
+.scroller {
+	bottom   : 0;
+	left     : 0;
+	overflow : auto;
+	position : fixed;
+	right    : 0;
+	top      : 217px + 4px;
 }

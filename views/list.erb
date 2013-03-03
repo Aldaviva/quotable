@@ -13,41 +13,44 @@
 	<body>
 		<h1><%= @paperName %></h1>
 
-		<div class="revealerBar">
-			<a class="revealer" href="#">Submit a quotation</a>
-		</div>
+		<div class="scroller">
 
-		<div class='quotations'>
-			<form class="addQuotation hidden" method="post">
-				<figure class="quotation">
-					<div>
-						<div class="date"></div>
+			<div class="revealerBar">
+				<a class="revealer" href="#">Submit a quotation</a>
+			</div>
 
-						<blockquote class="body">
-							<textarea name="body" placeholder="What was said?" rows="5" tabIndex="0" data-validators="required"></textarea>
-						</blockquote>
+			<div class='quotations'>
+				<form class="addQuotation hidden" method="post">
+					<figure class="quotation">
+						<div>
+							<div class="date"></div>
 
-						<figcaption>
-							<input name="author" type="text" placeholder="Who said it?" tabIndex="1" data-validators="required" />
-						</figcaption>
+							<blockquote class="body">
+								<textarea name="body" placeholder="What was said?" rows="5" tabIndex="0" data-validators="required"></textarea>
+							</blockquote>
 
-						<a class="submitLink" href="#" tabIndex="2">Fire it off</a>
-						<input name="submitButton" style="display: none" type="submit" />
-					</div>
-				</figure>
-			</form>
+							<figcaption>
+								<input name="author" type="text" placeholder="Who said it?" tabIndex="1" data-validators="required" />
+							</figcaption>
 
-			<% for @quotation in quotations %>
-				<figure class='quotation'>
-					<div>
-						<div class="date"><%= @quotation['date'].localtime.strftime("%b. %e, %l:%M %P") %></div>
+							<a class="submitLink" href="#" tabIndex="2">Fire it off</a>
+							<input name="submitButton" style="display: none" type="submit" />
+						</div>
+					</figure>
+				</form>
 
-						<blockquote class="body"><%= ERB::Util::h(@quotation['body']).gsub(/\n/, "<br />") %></blockquote>
+				<% for @quotation in quotations %>
+					<figure class='quotation'>
+						<div>
+							<div class="date"><%= @quotation['date'].localtime.strftime("%b. %e, %l:%M %P") %></div>
 
-						<figcaption><%= ERB::Util::h(@quotation['author']) %></figcaption>
-					</div>
-				</figure>
-			<% end %>
+							<blockquote class="body"><%= ERB::Util::h(@quotation['body']).gsub(/\n/, "<br />") %></blockquote>
+
+							<figcaption><%= ERB::Util::h(@quotation['author']) %></figcaption>
+						</div>
+					</figure>
+				<% end %>
+			</div>
 		</div>
 
 		<script src="media/scripts/lib/mootools-core-1.4.5-full-nocompat-yc.js" type="text/javascript"></script>

@@ -1,5 +1,15 @@
 (function(){
 
+	$$('h1').addEvent('click', function(){
+		window.location.reload();
+	});
+
+	var h1 = $$('h1')[0];
+	while(h1.clientHeight > 217){
+		h1.setStyle('fontSize', parseInt(h1.getStyle('fontSize'), 10) - 3);
+	}
+	h1.setStyle('visibility', 'visible');
+
 	var form = $$("form.addQuotation")[0];
 	var validator = new Form.Validator(form, {
 		stopOnFailure: true,
