@@ -16,32 +16,36 @@ form.addQuotation {
 
 	textarea {
 		padding : 3px 6px;
-		width   : 79%;
+		width   : 96%;
 	}
 
 	figcaption {
 		input {
 			padding : 3px 6px;
-			width   : 53%;
+			width   : 76%;
 		}
 	}
 
 	.submitLink {
-		margin-top: 0.5em;
-		display: block;
-		width: 100%;
-		text-align: left;
-		margin: 0.5em (-1 * (@quotation_spacing_horiz + 40px)) 0;
+		display    : block;
+		margin     : 0.5em (-1 * (@quotation_spacing_horiz + 40px)) 0;
+		margin-top : 0.5em;
+		text-align : left;
+		width      : 100%;
 	}
 
 	&.invalid .submitLink {
-		opacity: 0.75;
-		cursor: default;
+		cursor  : default;
+		opacity : 0.75;
 
 		&:hover {
 			color: @dark_gray;
 			background-color: transparent;
 		}
+	}
+
+	.date {
+		padding-top: 0.3em;
 	}
 
 	.quotation {

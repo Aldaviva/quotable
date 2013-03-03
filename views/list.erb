@@ -23,11 +23,11 @@
 				<form class="addQuotation hidden" method="post">
 					<figure class="quotation">
 						<div>
-							<div class="date"></div>
-
 							<blockquote class="body">
 								<textarea name="body" placeholder="What was said?" rows="5" tabIndex="0" data-validators="required"></textarea>
 							</blockquote>
+
+							<div class="date"></div>
 
 							<figcaption>
 								<input name="author" type="text" placeholder="Who said it?" tabIndex="1" data-validators="required" />
@@ -42,9 +42,9 @@
 				<% for @quotation in quotations %>
 					<figure class='quotation'>
 						<div>
-							<div class="date"><%= @quotation['date'].localtime.strftime("%b. %e, %l:%M %P") %></div>
-
 							<blockquote class="body"><%= ERB::Util::h(@quotation['body']).gsub(/\n/, "<br />") %></blockquote>
+							
+							<div class="date"><%= @quotation['date'].localtime.strftime("%b. %e, %l:%M %P") %></div>
 
 							<figcaption><%= ERB::Util::h(@quotation['author']) %></figcaption>
 						</div>

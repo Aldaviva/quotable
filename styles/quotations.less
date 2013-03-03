@@ -30,19 +30,21 @@
 			height    : 0px;
 			position  : relative;
 			width     : 0px;
+			/*border: 1px solid red;*/
+			vertical-align: top;
 		}
 
 		&::before {
 			content : "“";
 			float   : left;
-			left    : -36px;
-			top     : 4px;
+			left    : -40px;
+			top     : 6px;
 		}
 		&::after {
 			content : '”';
 			display : inline-block;
 			left    : 8px;
-			top     : 14px;
+			top     : 9px;
 		}
 	}
 
@@ -67,7 +69,7 @@
 		font-size    : 20px;
 		margin-left  : 2em;
 		margin-right : -0.5 * @quote_padding_horiz;
-		margin-top   : 0.6em;
+		margin-top   : 1.0em;
 		opacity      : 0.50;
 	}
 }
