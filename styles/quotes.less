@@ -1,14 +1,5 @@
-@border_spacing_horiz: 200px;
-
 .quotations {
-	/*margin: 0 70px 0;*/
-	position: fixed;
-	overflow: auto;
-	top: 221px;
-	left: 0;
-	right: 0;
-	bottom: 100px;
-	padding: 0 (@border_spacing_horiz + 70px);
+	padding: 0 (@border_spacing_horiz + @quotation_spacing_horiz);
 }
 
 .quotation {
@@ -30,7 +21,7 @@
 		color: @dark_blue;
 	}
 
-	blockquote {
+	.body {
 		font-size   : 36px;
 		line-height : 1.27em;
 
@@ -61,6 +52,7 @@
 	}
 
 	figcaption {
+		/*display    : inline-block;*/
 		font-size  : 26px;
 		margin-top : 0.7em;
 		opacity    : 0.70;

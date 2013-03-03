@@ -1,54 +1,95 @@
 form.addQuotation {
-
-	border-top : 4px solid @dark_gray;
-	bottom     : 0;
-	color      : @dark_gray;
-	left       : 0;
-	position   : fixed;
-	right      : 0;
-	text-align : right;
+	border-bottom : 4px solid @dark_gray;
+	margin        : 0 (-1 * (@border_spacing_horiz + @quotation_spacing_horiz));
+	padding       : 0 (@border_spacing_horiz + @quotation_spacing_horiz);
 
 	&.hidden {
-		.revealer {
-			display: block;
-		}
-
-		textarea, input, a {
-			display: none;
-		}
+		display: none;
 	}
 
-	.revealer {
-		display : none;
+	textarea, figcaption input {
+		background          : rgba(255, 255, 255, 0.298);
+		border              : 1px solid transparent;
+		border-bottom-color : fade(@dark_gray, 50%);
+		color               : inherit;
+	}
+
+	textarea {
+		padding : 3px 6px;
+		width   : 79%;
+	}
+
+	figcaption {
+		input {
+			padding : 3px 6px;
+			width   : 53%;
+		}
 	}
 
 	.submitLink {
-		display: inline-block;
+		margin-top: 0.5em;
+		display: block;
+		width: 100%;
+		text-align: left;
+		margin: 0.5em (-1 * (@quotation_spacing_horiz + 40px)) 0;
 	}
 
-	.submitLink, .revealer {
-		color       : @dark_gray;
-		/*display     : inline-block;*/
-		font-size   : 34px;
-		line-height : 96px;
-		padding     : 0 22px;
+	&.invalid .submitLink {
+		opacity: 0.75;
+		cursor: default;
 
 		&:hover {
-			background-color : fade(white, 30%);
-			color            : @dark_red;
+			color: @dark_gray;
+			background-color: transparent;
 		}
+	}
 
-		&::after {
-			content     : '≥';
-			display     : inline-block;
-			font-family : 'Historical English Textura';
-			font-size   : 55px;
-			height      : 0;
-			left        : -1em;
-			margin-left : 1em + 0.25em;
-			position    : relative;
-			top         : 5px;
-			width       : 0;
-		}
+	.quotation {
+		padding-bottom: 0;
+	}
+
+	.validation-failed {
+		/*border: 1px solid red;*/
+	}
+}
+
+.revealer, .submitLink {
+	background  : none;
+	border      : none;
+	color       : @dark_gray;
+	font-size   : 34px;
+	line-height : 96px;
+	padding     : 0 22px;
+
+	&:hover {
+		background-color : fade(white, 30%);
+		color            : @dark_red;
+	}
+
+	&::before {
+		content     : '≥';
+		display     : inline-block;
+		float       : left;
+		font-family : 'Historical English Textura';
+		font-size   : 55px;
+		height      : 1px;
+		left        : -1.2em;
+		margin-left : 1em + 0.45em;
+		position    : relative;
+		top         : -7px;
+		width       : 0;
+	}
+}
+
+.revealerBar {
+	border-bottom : 4px solid @dark_gray;
+	color         : @dark_gray;
+
+	&.hidden {
+		display: none;
+	}
+
+	.revealer {
+		display : block;
 	}
 }

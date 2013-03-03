@@ -1,49 +1,44 @@
 (function(){
 
 	var form = $$("form.addQuotation")[0];
+	var validator = new Form.Validator(form, {
+		stopOnFailure: true,
+		ignoreHidden: false,
+		evaluateOnSubmit: true,
+		evaluateFieldsOnChange: false,
+		evaluateFieldsOnBlur: true,
+		onElementFail: function(element, failedValidators){
+			form.addClass('invalid');
+		},
+		onFormValidate: function(isValid, form){
+			form.toggleClass('invalid', !isValid);
+		}
+	});
+
+	form.addEvent('keyup', function(){
+		form.validate();
+	});
 
 	function revealForm(){
 		form.removeClass('hidden');
+		form.addClass('invalid');
 	}
 
-	function onSubmitForm(){
-		var validationError = getValidationError();
-		if(validationError != null){
-			alert("Your quotation isn't ready to submit:\n"+validationError+'.');
-			return false;
-		}
-		//if the user didn't even enter anything, just hide the form? and tell the user what happened?
-		//maybe just let the form time out if it's open and not interacted with for a while?
-	}
-
-	function getValidationError(){
-		var body = form.body.value;
-		if(body.trim() == ''){
-			return 'Body is empty';
-		}
-
-		var author = form.author.value;
-		if(author.trim() == ''){
-			return 'Author is empty';
-		}
-
-		return null;
-	}
-
-	form.addEvent('submit', onSubmitForm);
-
-	var revealerLink = $(form).getElement('.revealer');
+	var revealerLink = $$('.revealer')[0];
 
 	revealerLink.addEvent('click', function(e){
 		revealForm();
+		$$('.revealerBar').addClass('hidden');
+		var now = new Date();
+		form.getElement('.date').set('text', now.format("%b. %e, %l:%M ")+now.format("%p").toLowerCase());
 		return false;
 	});
 
-	var submitLink = form.getElement('.submitLink');
+	var submitLink = $$('.submitLink');
 
 	submitLink.addEvent('click', function(e){
-		form.fireEvent('submit');
+		form.submitButton.click();
 		return false;
-	})
+	});
 
 })();
