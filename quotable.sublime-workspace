@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"submi",
+				"submitLink"
+			],
+			[
+				"valdat",
+				"validationError"
+			],
+			[
+				"get",
+				"getValidationError"
+			],
+			[
 				"font",
 				"font-style"
 			],
@@ -110,10 +122,6 @@
 			[
 				"rawSort",
 				"rawSortField"
-			],
-			[
-				"get",
-				"getBundle"
 			],
 			[
 				"scroll",
@@ -506,14 +514,6 @@
 			[
 				"_mee",
 				"_meetingUrl"
-			],
-			[
-				"text",
-				"textArea"
-			],
-			[
-				"glu",
-				"glueButton"
 			]
 		]
 	},
@@ -523,18 +523,15 @@
 			"file": "index.rb",
 			"settings":
 			{
-				"buffer_size": 1374,
+				"buffer_size": 1434,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "form.addQuote {\n\n	border-top: 4px solid @dark_gray;\n\n	&.hidden {\n		.revealer {\n			display: block;\n		}\n\n		textarea, input {\n			display: none;\n		}\n	}\n\n	.revealer {\n		display: none;\n\n		.icon {\n			font-family: ;\n		}\n	}\n\n}",
 			"file": "styles/form.less",
-			"file_size": 112,
-			"file_write_time": 130066925516318658,
 			"settings":
 			{
-				"buffer_size": 217,
+				"buffer_size": 889,
 				"line_ending": "Unix"
 			}
 		},
@@ -542,15 +539,43 @@
 			"file": "views/list.erb",
 			"settings":
 			{
-				"buffer_size": 1076,
+				"buffer_size": 1368,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/media/scripts/list.js",
+			"settings":
+			{
+				"buffer_size": 1057,
+				"line_ending": "Unix",
+				"name": "console.log(\"list.js loaded\");"
+			}
+		},
+		{
+			"contents": "[\n	{\n		\"id\": \"fathers_day_2008\",\n		\"title\": \"Happy Father's Day\",\n		\"client\": \"Mr. Hutchison\",\n		\"medium\": \"card\",\n		\"year\": \"2008\",\n		\"src\": \"fathersday2008.jpg\"\n	},\n	{\n		\"id\": \"mothers_day_2008\",\n		\"title\": \"Happy Mother's Day\",\n		\"client\": \"Mrs. Hutchison\",\n		\"medium\": \"card\",\n		\"year\": \"2008\",\n		\"description\": \"Any self-respecting designer should create his own Mother's Day card.\",\n		\"src\": \"mothersday2008.jpg\"\n	},\n	{\n		\"id\": \"fathers_day_2010\",\n		\"title\": \"Happy Father's Day\",\n		\"client\": \"Mr. Hutchison\",\n		\"medium\": \"card\",\n		\"year\": \"2010\",\n		\"src\": \"fathersday2010.jpg\"\n	},\n	{\n		\"id\": \"dads_birthday_2011\",\n		\"title\": \"Happy Birthday, Dad\",\n		\"client\": \"Mr. Hutchison\",\n		\"medium\": \"card\",\n		\"year\": \"2011\",\n		\"src\": \"dadsbirthday2011.jpg\"\n	},\n	{\n		\"id\": \"mothers_day_2011\",\n		\"title\": \"Happy Tiger Lillies\",\n		\"client\": \"Mrs. Hutchison\",\n		\"medium\": \"card\",\n		\"year\": \"2011\",\n		\"src\": \"mothersday2011.jpg\"\n	},\n	{\n		\"id\": \"cheese_night\",\n		\"title\": \"Cheese Night\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2009\",\n		\"description\": \"I wanted to create a more classical look, but not to overdo it with flashy fonts and flourishes. The spatial balance, typography, and clean simplicity reflected the attitude of the event: refined and distinguished.\",\n		\"src\": \"cheesenight.jpg\"\n	},\n	{\n		\"id\": \"euro_dance\",\n		\"title\": \"Euro Dance\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2009\",\n		\"description\": \"As an advertisement for a dance party, this design aimed to be effective by showing an exciting scene. The silhouettes were chosen to look joyful and energetic. Below, the details are presented in an ornate style to give the design a unique style.\",\n		\"src\": \"eurodance.jpg\"\n	},\n	{\n		\"id\": \"firecream\",\n		\"title\": \"Firecream\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2009\",\n		\"description\": \"One challenge faced in this design was the name of the event. House members all know what Firecream is, but it makes no sense for everyone else. I decided to describe the event so that people could understand what happened and minimize the fact that it had a silly name. \\\"Ice Cream, Beside a roaring fireplace\\\" is more attractive and makes more sense.\",\n		\"src\": \"firecream.jpg\"\n	},\n	{\n		\"id\": \"helium_party\",\n		\"title\": \"Helium Party\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2008\",\n		\"description\": \"The first thing that came to mind was to create a design with helium balloons. The second idea was to have content that looked nothing like helium, but was funny, a little puzzling, related to the idea of floating, and (most of all) memorable.\",\n		\"src\": \"heliumparty.jpg\"\n	},\n	{\n		\"id\": \"javaspook_2008\",\n		\"title\": \"Javaspook 2008\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2008\",\n		\"description\": \"This design continued in the proud, slick-looking Tech House tradition of tableslips with lots of black ink. They tend to stand out well when they are deployed. The high-contrast moon and large white text stand out from the dark background.\",\n		\"src\": \"javaspook2008.jpg\"\n	},\n	{\n		\"id\": \"javaspook_2009\",\n		\"title\": \"Javaspook 2009\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2009\",\n		\"description\": \"The main focus of this design is the grid of six items in the center, representing the major selling points of this event. The content of each cell was chosen to be easy to recognize, obvious in meaning, and dark enough to starkly stand out against the light background.\",\n		\"src\": \"javaspook2009.jpg\"\n	},\n	{\n		\"id\": \"mafia\",\n		\"title\": \"Mafia\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2009\",\n		\"description\": \"A game like Mafia calls for a dark tableslip design with grunge fonts, a dirty background texture, and gentlemen in suits. A little bit of Fake Italiano never hurts, either.\",\n		\"src\": \"mafia.jpg\"\n	},\n	{\n		\"id\": \"apples_to_apples\",\n		\"title\": \"Apples to Apples\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2008\",\n		\"description\": \"An orange makes a prominent appearance in this design because orange slices were served during the game, and the event was almost called Oranges to Oranges. I am very happy with this design. The lady is excited, and human faces draw the viewer's attention like a magnet, especially when the faces are looking at important information. Second, the text on a slant looks very spiffy. Slab serif seals the deal.\",\n		\"src\": \"apples.jpg\"\n	},\n	{\n		\"id\": \"spam_poetry\",\n		\"title\": \"Spam Poetry\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2009\",\n		\"description\": \"Using 3D techniques to make the text look more like it physically exists in the scene. The source image captured the heart of the event's experience quite well.\",\n		\"src\": \"spampoetry.jpg\"\n	},\n	{\n		\"id\": \"stuff_night_adoch\",\n		\"title\": \"Stuff Night for A Day on College Hill\",\n		\"client\": \"Technology House\",\n		\"medium\": \"flyer\",\n		\"year\": \"2009\",\n		\"description\": \"Unlike many other Tech House publications, this design was whipped up to be passed around in the evening during A Day on College Hill. Prospective freshmen were welcomed to attend our Stuff Night, so the target audience was a 17-year-old who may not even know about Tech House, but was making plans for that evening. Also, the viewer would be on the receiving end of a face-to-face pitch from a Tech House member that described the event. This drove some design decisions:  the overall goal of the flyer was to remind the recipient of the conversation, not introduce it anew. I also wanted to include a large version of our cool logo and give them the means to find the building. Lesson learned:  find out if your materials are going to be viewed in low-light situations and increase the content size or paper size accordingly.\",\n		\"src\": \"stuffnight2.jpg\"\n	},\n	{\n		\"id\": \"stuff_night\",\n		\"title\": \"Stuff Night\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2009\",\n		\"description\": \"This series of tableslip designs continued the polished, sophisticated design theme for Tech House publications. Column layouts are great, and this one works well with elegant serif type and the flourish for balance. This tableslip was the first design to include double-sided printing, which gave the front more room without a map wedged into a corner, and the back had a large, gorgeous map with destination callout. The inclusion of a readable, helpful map was important because publication corresponded to the first public event of the school year, so the target audience was the new student that didn't know where Tech House was located. A new challenge involved letting the audience know that there was a back side to the printing. To do so, I included the notice in the lower right area, in case the tableslip landed face-up, and used light background colors on the front so the high-contrast map would show through given the slightest bit of backlight when the slip is lifted from the table.\",\n		\"src\": \"stuffnight3.jpg\"\n	},\n	{\n		\"id\": \"techno_dance\",\n		\"title\": \"Techo Dance\",\n		\"client\": \"Technology House\",\n		\"medium\": \"tableslip\",\n		\"year\": \"2009\",\n		\"description\": \"Series of tableslips advertising a party I was DJing. The font I chose is really groovy and Unicode-tastic, the background is pretty high-energy, and the silhouettes are excited and good-looking. It's a shame that we didn't have color printing available, because the background started out as a hot red blast.\",\n		\"src\": \"technodance.jpg\"\n	},\n	{\n		\"id\": \"april_fools_2009\",\n		\"title\": \"Host Club (April Fools' Day)\",\n		\"client\": \"Technology House\",\n		\"medium\": \"web site\",\n		\"year\": \"2009\",\n		\"description\": \"Tech House turned into a Host Club on April 1, offering the noble services of various members for the sophisticated pleasure of the discerning bachelor or d\\u00e9butante. This was a group project that unfolded in a few short hours inside Tech House Black Ops, right up against the deadline. The site consisted of twenty-three pages, but cunning use of PHP, CSS, XML and XSLT made short work of this challenge.\",\n		\"src\": \"aprilfools09.jpg\",\n		\"link\": \"https://techhouse.org/attic/2008-09/aprilfools/\"\n	},\n	{\n		\"id\": \"crest\",\n		\"title\": \"Crest\",\n		\"client\": \"Technology House\",\n		\"medium\": \"shirt\",\n		\"year\": \"2008\",\n		\"description\": \"I combined the trusty old circular Tech House logo with a medieval coat-of-arms motif, complete with satellite dish, for the annual t-shirt design competition. Mine was a smashing hit and I see people wearing these t-shirts and hoodies all the time.\",\n		\"src\": \"crest.jpg\"\n	},\n	{\n		\"id\": \"eastec\",\n		\"title\": \"Eastec\",\n		\"client\": \"New Visions Engineering\",\n		\"medium\": \"poster\",\n		\"year\": \"2006\",\n		\"description\": \"A group project for a high school engineering course. Our class attended a trade show that included a student poster contest. Our entry, a 4' \\u00d7 3' poster I created in Illustrator and Photoshop, showcased the different local companies we had taken tours of.\",\n		\"src\": \"eastec.jpg\"\n	},\n	{\n		\"id\": \"photography_mk2\",\n		\"title\": \"Tech House Photography Mk.II\",\n		\"client\": \"Technology House\",\n		\"medium\": \"web application\",\n		\"year\": \"2008\",\n		\"description\": \"Tech House's old photo gallery was a mess of Perl and slower than slow. I rewrote it, maintaining backwards compatibility but including faster page loads, a thumbnail index page, keyboard navigation, a thumbnail frame inside galleries, better metadata display, and a web-based gallery publishing tool.\",\n		\"src\": \"photogallery1.jpg\"\n	},\n	{\n		\"id\": \"quotes\",\n		\"title\": \"Quotes Page\",\n		\"client\": \"Technology House\",\n		\"medium\": \"web application\",\n		\"year\": \"2009\",\n		\"description\": \"Features voting, AJAX, XML storage, RSS feed, web and command-line interfaces, and easy year-to-year migration. Progressively enhanced, of course.\",\n		\"src\": \"quotes.jpg\",\n		\"link\": \"https://techhouse.org/quotes\"\n	},\n	{\n		\"id\": \"swiss_army_knife\",\n		\"title\": \"Swiss Army Knife\",\n		\"client\": \"Technology House\",\n		\"medium\": \"shirt\",\n		\"year\": \"2009\",\n		\"description\": \"My second submission to the annual t-shirt design competition. This entry tied for first and was adopted for use in many subsequent Tech House publications.\",\n		\"src\": \"swissarmyknife.jpg\"\n	},\n	{\n		\"id\": \"aldaviva_1\",\n		\"title\": \"Aldaviva 1\",\n		\"client\": \"personal use\",\n		\"medium\": \"web site\",\n		\"year\": \"2005\",\n		\"src\": \"aldaviva_1.jpg\"\n	},\n	{\n		\"id\": \"uploader\",\n		\"title\": \"Uploader\",\n		\"client\": \"personal use\",\n		\"medium\": \"web application\",\n		\"year\": \"2005\",\n		\"description\": \"My first web application, where I learned about PHP, file uploads, access control, pre-AJAX Javascript integration, and usability.\",\n		\"src\": \"Uploader.jpg\"\n	},\n	{\n		\"id\": \"thlaundry\",\n		\"title\": \"THLaundry\",\n		\"client\": \"Technology House\",\n		\"medium\": \"hoax of a web site\",\n		\"year\": \"2010\",\n		\"src\": \"thlaundry.jpg\",\n		\"link\": \"http://thlaundry.techhouse.org\"\n	},\n	{\n		\"id\": \"republic_of_the_southern_cross\",\n		\"title\": \"Republic of the Southern Cross: Disaster Analysis\",\n		\"client\": \"Russian 1200 at Brown University\",\n		\"medium\": \"web site\",\n		\"year\": \"2010\",\n		\"src\": \"starcity.jpg\"\n	},\n	{\n		\"id\": \"photography_mk3\",\n		\"title\": \"Tech House Photography Mk.III\",\n		\"client\": \"Technology House\",\n		\"medium\": \"web application\",\n		\"year\": \"2010\",\n		\"src\": \"techhousephotography.jpg\",\n		\"link\": \"https://techhouse.org/photogallery\"\n	},\n	{\n		\"id\": \"apparel\",\n		\"title\": \"Tech House Apparel\",\n		\"client\": \"Technology House\",\n		\"medium\": \"web application\",\n		\"year\": \"2011\",\n		\"src\": \"thapparel.jpg\"\n	},\n	{\n		\"id\": \"recruiting_flyer\",\n		\"title\": \"Cisco Recruiting Flyer\",\n		\"client\": \"Cisco Systems\",\n		\"medium\": \"flyer\",\n		\"year\": \"2010\",\n		\"src\": \"ciscorecruiting.jpg\"\n	},\n	{\n		\"id\": \"map\",\n		\"title\": \"Tech House Map\",\n		\"client\": \"Literary Arts 1010D at Brown University\",\n		\"medium\": \"web application\",\n		\"year\": \"2009\",\n		\"src\": \"techhousemap.jpg\",\n		\"link\": \"http://aldaviva.com/map\"\n	},\n	{\n		\"id\": \"panoramas\",\n		\"title\": \"Panoramas\",\n		\"client\": \"Literary Arts 1110C at Brown University\",\n		\"medium\": \"3D virtual reality interactive simulation\",\n		\"year\": \"2007\",\n		\"src\": \"panoramas.jpg\"\n	},\n	{\n		\"id\": \"campus_safety_map\",\n		\"title\": \"Nighttime Campus Safety\",\n		\"client\": \"Geology 1320 at Brown University\",\n		\"medium\": \"poster\",\n		\"year\": \"2007\",\n		\"src\": \"campussafetymap.jpg\"\n	},\n	{\n		\"id\": \"nysc\",\n		\"title\": \"NYSC Yearbook\",\n		\"client\": \"the National Youth Science Foundation\",\n		\"medium\": \"web site and DVD\",\n		\"year\": \"2009\",\n		\"src\": \"nysc.jpg\"\n	},\n	{\n		\"id\": \"crew_banquet_2007\",\n		\"title\": \"Crew Banquet 2007\",\n		\"client\": \"the Warwick Valley Crew Club\",\n		\"medium\": \"slideshow and video\",\n		\"year\": \"2007\",\n		\"src\": \"crew_banquet_2007.jpg\"\n	},\n	{\n		\"id\": \"crew_banquet_2008\",\n		\"title\": \"Crew Banquet 2008\",\n		\"client\": \"the Warwick Valley Crew Club\",\n		\"medium\": \"slideshow and video\",\n		\"year\": \"2008\",\n		\"src\": \"crew_banquet_2008.jpg\"\n	},\n	{\n		\"id\": \"coal_powered_websites\",\n		\"title\": \"Coal-Powered Industrial Websites\",\n		\"client\": \"Cisco Systems\",\n		\"medium\": \"flyer\",\n		\"year\": \"2011\",\n		\"src\": \"coalpoweredwebsites.jpg\"\n	},\n	{\n		\"id\": \"roommate_wanted\",\n		\"title\": \"Roommate Wanted\",\n		\"client\": \"personal use\",\n		\"medium\": \"flyer\",\n		\"year\": \"2011\",\n		\"src\": \"roommate_wanted.jpg\"\n	},\n	{\n		\"id\": \"fathers_day_2011\",\n		\"title\": \"Happy Father's Day!\",\n		\"client\": \"Mr. Hutchison\",\n		\"medium\": \"card\",\n		\"year\": \"2011\",\n		\"src\": \"fathersday2011.jpg\"\n	},\n	{\n		\"id\": \"ctx_admin\",\n		\"title\": \"Cisco TelePresence Exchange System Administration\",\n		\"client\": \"Cisco Systems\",\n		\"medium\": \"web application\",\n		\"year\": \"2011\",\n		\"src\": \"ctx_logcapture.png\"\n	},\n	{\n		\"id\": \"myvrm\",\n		\"title\": \"myVRM-X Scheduling Portal\",\n		\"client\": \"myVRM\",\n		\"medium\": \"web site mock-up\",\n		\"year\": \"2011\",\n		\"src\": \"myvrm.png\"\n	},\n	{\n		\"id\": \"ciscolive\",\n		\"title\": \"Cisco TelePresence Active Meeting Management for iPad\",\n		\"client\": \"Cisco Systems\",\n		\"medium\": \"web application\",\n		\"year\": \"2011\",\n		\"src\": \"ciscolive.png\"\n	},\n	{\n		\"id\": \"ctx_upgrade_admin\",\n		\"title\": \"Cisco TelePresence Exchange System Upgrade\",\n		\"client\": \"Cisco Systems\",\n		\"medium\": \"web application\",\n		\"year\": \"2011\",\n		\"src\": \"ctx-upgrade-admin.png\"\n	},\n	{\n		\"id\": \"skinny\",\n		\"title\": \"Project Skinny\",\n		\"client\": \"Blue Jeans Network\",\n		\"medium\": \"browser-based video conferencing client\",\n		\"year\": \"2012\",\n		\"src\": \"skinny-ui.jpg\"\n	},\n	{\n		\"id\": \"acid\",\n		\"title\": \"Acid\",\n		\"client\": \"Blue Jeans Network\",\n		\"medium\": \"iOS video conferencing client\",\n		\"year\": \"2012\",\n		\"src\": \"acid.jpg\"\n	},\n	{\n		\"id\": \"skinny_dashboard\",\n		\"title\": \"Tailor\",\n		\"client\": \"Blue Jeans Network\",\n		\"medium\": \"web application\",\n		\"year\": \"2012\",\n		\"src\": \"skinnydashboard.png\"\n	},\n	{\n		\"id\": \"cashman\",\n		\"title\": \"Cashman and Wallette\",\n		\"client\": \"personal use\",\n		\"medium\": \"cloud application and mobile client\",\n		\"year\": \"2012\",\n		\"src\": \"wallette.png\"\n	},\n	{\n		\"id\": \"eircd\",\n		\"title\": \"eircd\",\n		\"client\": \"personal use\",\n		\"medium\": \"IRC server\",\n		\"year\": \"2012\",\n		\"src\": \"eircd.jpg\"\n		},\n	{\n		\"id\": \"skinny_developer_console\",\n		\"title\": \"Developer Console\",\n		\"client\": \"Blue Jeans Network\",\n		\"medium\": \"cheat code\",\n		\"year\": \"2012\",\n		\"src\": \"skinny_developer_console.png\"\n	},\n	{\n		\"id\": \"lumberjack\",\n		\"title\": \"Lumberjack\",\n		\"client\": \"Blue Jeans Network\",\n		\"medium\": \"web application\",\n		\"year\": \"2012\",\n		\"src\": \"lumberjack.png\"\n	},\n	{\n		\"id\": \"rollway\",\n		\"title\": \"Rollway\",\n		\"client\": \"Blue Jeans Network\",\n		\"medium\": \"server\",\n		\"year\": \"2013\",\n		\"src\": \"rollway.png\"\n	},\n	{\n		\"id\": \"buildonwrite\",\n		\"title\": \"Build on Write\",\n		\"client\": \"Blue Jeans Network\",\n		\"medium\": \"script\",\n		\"year\": \"2013\",\n		\"src\": \"buildonwrite.png\"\n	},\n	{\n		\"id\": \"quotables\",\n		\"title\": \"Quotables\",\n		\"client\": \"personal use\",\n		\"medium\": \"web application\",\n		\"year\": \"2013\",\n		\"src\": \"quotables.jpg\"\n	}\n]\n",
+			"file": "/C/Users/Ben/AppData/Local/Temp/scp00113/cygdrive/c/Server/portfolio/data/portfolio.json",
+			"file_size": 16297,
+			"file_write_time": 130067497813162619,
+			"settings":
+			{
+				"buffer_size": 15846,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "styles/common.less",
 			"settings":
 			{
-				"buffer_size": 299,
+				"buffer_size": 422,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/quotes.less",
+			"settings":
+			{
+				"buffer_size": 1241,
 				"line_ending": "Unix"
 			}
 		}
@@ -675,6 +700,9 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Ben/AppData/Roaming/Sublime Text 2/Packages/User/LESS.sublime-settings",
+		"/C/Users/Ben/AppData/Roaming/Sublime Text 2/Packages/User/Ruby.sublime-settings",
+		"/B/quotable/quotable.sublime-project",
 		"/B/quotable/views/stylesheet.less",
 		"/B/quotable/views/styles/reset.less",
 		"/B/quotable/views/styles/fonts.less",
@@ -799,10 +827,7 @@
 		"/S/rollway/config.js",
 		"/S/rollway/tests/config.json",
 		"/S/rollway/node_modules/mocha/lib/reporters/landing.js",
-		"/S/rollway/node_modules/omf/lib/assertions.js",
-		"/S/rollway/node_modules/omf/lib/index.js",
-		"/S/rollway/test.js",
-		"/S/rollway/node_modules/mocha/lib/reporters/spec.js"
+		"/S/rollway/node_modules/omf/lib/assertions.js"
 	],
 	"find":
 	{
@@ -1060,7 +1085,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1068,15 +1093,15 @@
 					"file": "index.rb",
 					"settings":
 					{
-						"buffer_size": 1374,
+						"buffer_size": 1434,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1369,
-								1369
+								1363,
+								1363
 							]
 						],
 						"settings":
@@ -1094,15 +1119,15 @@
 					"file": "styles/form.less",
 					"settings":
 					{
-						"buffer_size": 217,
+						"buffer_size": 889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								78,
-								78
+								220,
+								220
 							]
 						],
 						"settings":
@@ -1114,27 +1139,21 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 2,
 					"file": "views/list.erb",
 					"settings":
 					{
-						"buffer_size": 1076,
+						"buffer_size": 1368,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								67,
-								67
+								850,
+								850
 							]
 						],
 						"settings":
@@ -1150,23 +1169,104 @@
 				},
 				{
 					"buffer": 3,
-					"file": "styles/common.less",
+					"file": "public/media/scripts/list.js",
 					"settings":
 					{
-						"buffer_size": 299,
+						"buffer_size": 1057,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19,
-								19
+								1030,
+								1030
+							]
+						],
+						"settings":
+						{
+							"auto_name": "console.log(\"list.js loaded\");",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Ben/AppData/Local/Temp/scp00113/cygdrive/c/Server/portfolio/data/portfolio.json",
+					"settings":
+					{
+						"buffer_size": 15846,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15839,
+								15839
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9457.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "styles/common.less",
+					"settings":
+					{
+						"buffer_size": 422,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								330,
+								330
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/LessCSS/Syntaxes/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "styles/quotes.less",
+					"settings":
+					{
+						"buffer_size": 1241,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								210,
+								210
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LessCSS/Syntaxes/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1194,18 +1294,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -1229,6 +1322,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"qo",
+				"styles/quotes.less"
+			],
 			[
 				"fixt",
 				"test/fixtures/fixtures.js"
@@ -1736,10 +1833,6 @@
 			[
 				"lumber",
 				"src/scripts/Lumberjack.js"
-			],
-			[
-				"inro",
-				"src/scripts/views/IntroStep.js"
 			]
 		],
 		"width": 0.0

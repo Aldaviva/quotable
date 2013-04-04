@@ -50,6 +50,7 @@
 
 	submitLink.addEvent('click', function(e){
 		form.submitButton.click();
+		submitLink.removeEvents('click');
 		return false;
 	});
 
