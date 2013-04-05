@@ -1,57 +1,90 @@
 (function(){
 
-	$$('h1').addEvent('click', function(){
-		window.location.reload();
-	});
+	var MONTHS = "Jan. Feb. Mar. Apr. May Jun. Jul. Aug. Sep. Oct. Nov. Dec".split(" ");
 
-	window.addEvent('load', function(){
-		var h1 = $$('h1')[0];
-		while(h1.clientHeight > 217){
-			h1.setStyle('fontSize', parseInt(h1.getStyle('fontSize'), 10) - 3);
+	var formatDate = window.formatDate = function(date){
+		var month = MONTHS[date.getMonth()];
+		var day = date.getDate();
+
+		return month + " " + day;
+	};
+
+	var QuotationModel = Backbone.Model.extend({
+		parse: function(data){
+			data.date = new Date(data.date * 1000);
+			return data;
 		}
-		h1.setStyle('visibility', 'visible');
 	});
 
-	var form = $$("form.addQuotation")[0];
-	var validator = new Form.Validator(form, {
-		stopOnFailure: true,
-		ignoreHidden: false,
-		evaluateOnSubmit: true,
-		evaluateFieldsOnChange: false,
-		evaluateFieldsOnBlur: true,
-		onElementFail: function(element, failedValidators){
-			form.addClass('invalid');
+	var QuotationsCollection = Backbone.Collection.extend({
+		model: QuotationModel,
+		url: "api/quotes/"
+	});
+
+	var QuotationView = Backbone.View.extend({
+		tagName: 'figure',
+		className: 'quotation',
+
+		initialize: function(){
+			_.bindAll(this);
 		},
-		onFormValidate: function(isValid, form){
-			form.toggleClass('invalid', !isValid);
+
+		render: function(){
+			DOMinate([this.el, ['div',
+				['blockquote', this.model.get('body'), {class: 'body'}],
+				['div',        this.renderDate(),      {class: 'date'}],
+				['figcaption', this.model.get('author')               ]
+			]]);
+			return this.el;
+		},
+
+		renderDate: function(){
+			var date = this.model.get('date');
+			return formatDate(date);
 		}
 	});
 
-	form.addEvent('keyup', function(){
-		form.validate();
+	var QuotationsView = Backbone.View.extend({
+		initialize: function(){
+			_.bindAll(this);
+
+			this.collection.on({
+				'reset' : this.addAll,
+				'add'   : this.addOne
+			});
+		},
+
+		addAll: function(){
+			var els = this.collection.map(this.renderChild);
+			this.el.empty().adopt(els);
+		},
+
+		addOne: function(model){
+			var el = this.renderChild(model);
+			this.el.grab(el, 'top');
+		},
+
+		renderChild: function(model){
+			return new QuotationView({ model: model }).render();
+		},
+
+		render: function(){
+			return this.el;
+		}
 	});
 
-	function revealForm(){
-		form.removeClass('hidden');
-		form.addClass('invalid');
-	}
 
-	var revealerLink = $$('.revealer')[0];
+	var quotationsCollection = new QuotationsCollection();
 
-	revealerLink.addEvent('click', function(e){
-		revealForm();
-		$$('.revealerBar').addClass('hidden');
-		var now = new Date();
-		form.getElement('.date').set('text', now.format("%b. %e, %l:%M ")+now.format("%p").toLowerCase());
-		return false;
-	});
+	window.addQuotation = function(data){
+		var model = new QuotationModel(data);
+		quotationsCollection.add(model);
+		model.save();
+	};
 
-	var submitLink = $$('.submitLink');
+	var quotationsView = new QuotationsView({ collection: quotationsCollection });
+	$$('.quotations').grab(quotationsView.render());
 
-	submitLink.addEvent('click', function(e){
-		form.submitButton.click();
-		submitLink.removeEvents('click');
-		return false;
-	});
+	quotationsCollection.fetch({ reset: true });
 
 })();

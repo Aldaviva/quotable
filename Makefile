@@ -10,7 +10,7 @@ css:
 	@mkdir -p public/media/styles
 	@lessc styles/all.less > public/media/styles/all.css
 
-run: all
+run:
 	@erl -pa ebin deps/*/ebin -s quotable
 
 start: run

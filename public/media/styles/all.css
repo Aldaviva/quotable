@@ -106,35 +106,36 @@ input::-moz-focus-inner {
 }
 @font-face {
   font-family: 'Historical English Textura';
-  src: url('../media/fonts/Historical-EnglishTextura.woff') format('woff');
+  src: url('../fonts/Historical-EnglishTextura.woff') format('woff');
 }
 @font-face {
   font-family: 'Mercury Text G4 Semibold';
-  src: url('../media/fonts/Mercury-TextG4Semibold.woff') format('woff');
+  src: url('../fonts/Mercury-TextG4Semibold.woff') format('woff');
 }
 @font-face {
   font-family: 'Didot M06 Medium';
-  src: url('../media/fonts/Didot-HTF-M06-Medium-Ital.woff') format('woff');
+  src: url('../fonts/Didot-HTF-M06-Medium-Ital.woff') format('woff');
   font-style: italic;
 }
 a {
   text-decoration: none;
 }
 body {
-  background: #ffffff url('../media/images/background.jpg') no-repeat 0 0;
+  background: #ffffff url('../images/background.jpg') no-repeat 0 0;
   background-size: 100% auto;
   font: 1em 'Mercury Text G4 Semibold';
 }
 h1 {
+  border-bottom: 4px solid #1f2429;
   color: #1f2429;
   cursor: pointer;
   font-family: 'Historical English Textura';
   font-size: 75px;
   line-height: 217px;
-  border-bottom: 4px solid #1f2429;
   padding: 0 0.8em;
-  visibility: hidden;
   text-align: center;
+  /*visibility    : hidden;*/
+
 }
 .scroller {
   bottom: 0;
@@ -143,6 +144,9 @@ h1 {
   position: fixed;
   right: 0;
   top: 221px;
+}
+.template {
+  display: none;
 }
 .quotations {
   padding: 30px 270px 0;

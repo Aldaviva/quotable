@@ -10,21 +10,21 @@ a {
 }
 
 body {
-	background      : white url('../media/images/background.jpg') no-repeat 0 0;
+	background      : white url('../images/background.jpg') no-repeat 0 0;
 	background-size : 100% auto;
 	font            : 1em 'Mercury Text G4 Semibold';
 }
 
 h1 {
+	border-bottom : 4px solid @dark_gray;
 	color         : @dark_gray;
 	cursor        : pointer;
 	font-family   : 'Historical English Textura';
 	font-size     : 75px;
 	line-height   : 217px;
-	border-bottom : 4px solid @dark_gray;
-	padding: 0 0.8em;
-	visibility: hidden;
+	padding       : 0 0.8em;
 	text-align    : center;
+	/*visibility    : hidden;*/
 }
 
 .scroller {
@@ -34,4 +34,8 @@ h1 {
 	position : fixed;
 	right    : 0;
 	top      : 217px + 4px;
+}
+
+.template {
+	display: none;
 }
