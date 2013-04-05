@@ -9,9 +9,13 @@
 		return month + " " + day;
 	};
 
-	var QuotationModel = Backbone.Model.extend({
+	var QuotationModel = window.QuotationModel = Backbone.Model.extend({
+		idAttribute: '_id',
 		parse: function(data){
-			data.date = new Date(data.date * 1000);
+			if(!(data.date instanceof Date)){
+				data.date = new Date(data.date * 1000);
+			}
+
 			return data;
 		}
 	});
@@ -73,14 +77,40 @@
 		}
 	});
 
-
 	var quotationsCollection = new QuotationsCollection();
 
-	window.addQuotation = function(data){
-		var model = new QuotationModel(data);
-		quotationsCollection.add(model);
-		model.save();
-	};
+	function queue(worker){
+		var list = [];
+		function run(){
+			var args = list[0];
+			args.unshift(done);
+			worker.apply(null, args);
+		}
+		function done(){
+			list.shift();
+			if(list.length){
+				run();
+			}
+		}
+		return function(){
+			list.push(Array.prototype.slice.apply(arguments));
+			if(list.length === 1){
+				run();
+			}
+		}
+	}
+
+	window.addQuotation = queue(function(done, model, doSave){
+		if(!quotationsCollection.get(model.id)){
+			quotationsCollection.add(model);
+			doSave && model.save({}, {
+				success: function(saved_model){
+					model.set(saved_model);
+					done();
+				}
+			});
+		}
+	});
 
 	var quotationsView = new QuotationsView({ collection: quotationsCollection });
 	$$('.quotations').grab(quotationsView.render());

@@ -59,8 +59,8 @@
 			el.set('value', '');
 		});
 
-
-		window.addQuotation(data);
+		var model = new QuotationModel(data);
+		window.addQuotation(model, true);
 	});
 
 })();

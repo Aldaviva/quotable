@@ -42,15 +42,17 @@ add_quotation(Req, MongoConnection, StreamClientRegistry) ->
 			{ok, QuoteId} = quoteadd_service:add_quotation(Body, Author, MongoConnection),
 			QuoteIdString = quotelist_service:convert_uuid_to_hex(QuoteId),
 			StreamClientRegistry ! {self(), list},
-			receive 
-				{list, Clients} -> lists:foreach(fun(Client) ->
-						Client ! {message, QuoteIdString}
-					end, Clients)
-			end,
-			cowboy_req:reply(201,
+			ReplyResult = cowboy_req:reply(201,
 				[{<<"content-type">>, <<"text/plain">>}], 
 				lists:flatten([<<"{\"_id\":\"">>, QuoteIdString, <<"\"}">>]),
-				Req2);
+				Req2),
+			receive 
+				{list, Clients} -> lists:foreach(fun(Client) ->
+						Client ! {quote_added, QuoteIdString, Body, Author}
+					end, Clients)
+			end,
+			ReplyResult;
+			
 		true -> 
 			cowboy_req:reply(400, [], ValidationMessage, Req2)
 	end,

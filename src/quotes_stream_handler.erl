@@ -8,9 +8,10 @@ init(_Transport, Req, [StreamClientRegistry]) ->
 	StreamClientRegistry ! {self(), add},
 	{loop, Req2, [StreamClientRegistry], 60000, hibernate}.
 
-info({message, Msg}, Req, State) ->
+info({quote_added, QuoteId, Body, Author}, Req, State) ->
+	Data = {[{'_id', QuoteId}, {body, Body}, {author, Author}, {date, timestamp()}]},
+	Msg = jiffy:encode(Data),
 	ok = cowboy_req:chunk(["id: ", id(), "\ndata: ", Msg, "\n\n"], Req),
-	io:format("sent stream event"),
 	{loop, Req, State, hibernate}.
 
 terminate(_Reason, _Req, [StreamClientRegistry]) ->
@@ -21,3 +22,7 @@ id() ->
 	{Mega, Sec, Micro} = erlang:now(),
 	Id = (Mega * 1000000 + Sec) * 1000000 + Micro,
 	integer_to_list(Id, 16).
+
+timestamp() ->
+	{Mega, Sec, _} = erlang:now(),
+	Mega * 1000000 + Sec.
