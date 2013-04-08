@@ -168,6 +168,7 @@ h1 {
 .quotation .body {
   font-size: 36px;
   line-height: 1.27em;
+  white-space: pre-wrap;
 }
 .quotation .body::before,
 .quotation .body::after {
