@@ -255,6 +255,9 @@ form.addQuotation .date {
 form.addQuotation .quotation {
   padding-bottom: 0;
 }
+form.addQuotation .body {
+  white-space: normal;
+}
 form.addQuotation .validation-failed {
   /*border: 1px solid red;*/
 
