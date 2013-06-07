@@ -1,46 +1,25 @@
 (function(){
 
-	var subscriptionConnection;
+	var eventSource = new EventSource('api/quotes/eventstream');
 
-	function subscribe(){
-		subscriptionConnection = new Request({
-			url: 'subscribe',
-			noCache: true
-		}).addEvents({
-			success: onPost,
-			timeout: function(){
-				// console.log("subscription timeout");
-			},
-			failure: function(){
-				// console.log("subscription failure");
-				setTimeout(subscribe, 2000);
-			}
-		});
-
-		console.log("subscribe");
-
-		subscriptionConnection.get();
-	}
-
-	function onPost(data){
-		if(data == 'new post'){
-			window.location.reload();
-		} else {
-			// console.log("ignored subscription");
-			setTimeout(subscribe, 0);
+	eventSource.addEventListener('message', function(event){
+		try {
+			var data = JSON.parse(event.data);
+			var model = new QuotationModel(data, { parse: true });
+			window.addQuotation(model, false);
+		} catch (e) {
+			console.error('Failed to parse '+event.data+': '+e);
 		}
-	}
+	}, false);
 
-	function unsubscribe(req){
-		subscriptionConnection.cancel();
-	}
+	eventSource.addEventListener('open', function(event) {
+		// console.log("Event Stream connected.");
+	}, false);
 
-	window.addEvent('load', subscribe);
-
-	// var form = $$("form.addQuotation")[0];
-	// form.addEvent('submit', unsubscribe);
-
-	var revealer = $$('.revealer')[0];
-	revealer.addEvent('click', 'unsubscribe');
+	eventSource.addEventListener('error', function(event) {
+		if(event.eventPhase == EventSource.CLOSED){
+			// console.error("Event Stream disconnected.");
+		}
+	}, false);
 
 })();
