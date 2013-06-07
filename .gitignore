@@ -1,0 +1,5 @@
+deps/
+ebin/
+*.sublime-*
+erl_crash.dump
+public/media/styles/all.css

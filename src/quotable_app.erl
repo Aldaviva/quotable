@@ -30,6 +30,7 @@ gen_routes() ->
 		{mimetypes, {fun mimetypes:path_to_mimes/2, default}}
 	],
 	[{'_', [
+		{"/api/quotes/websocket", quotes_socket_handler, [StreamClientRegistry]},
 		{"/api/quotes/eventstream", quotes_stream_handler, [StreamClientRegistry]},
 		{"/api/quotes", listquotes_handler, [MongoConnection, StreamClientRegistry]},
 		{"/", cowboy_static, [ {file, <<"../index.html">>} | StaticOpts ] },
