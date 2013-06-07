@@ -31,7 +31,6 @@ gen_routes() ->
 	],
 	[{'_', [
 		{"/api/quotes/websocket", quotes_socket_handler, [StreamClientRegistry]},
-		{"/api/quotes/eventstream", quotes_stream_handler, [StreamClientRegistry]},
 		{"/api/quotes", listquotes_handler, [MongoConnection, StreamClientRegistry]},
 		{"/", cowboy_static, [ {file, <<"../index.html">>} | StaticOpts ] },
 		{"/media/[...]", cowboy_static, StaticOpts}
