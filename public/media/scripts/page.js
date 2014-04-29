@@ -1,6 +1,6 @@
 (function(){
 	$$('h1').addEvent('click', function(){
-		window.location.reload(); //TODO does this needlessly invalidate caches?
+		window.location.reload();
 	});
 
 	function getRandomPaperName(){
@@ -109,20 +109,19 @@
 			"What All This Then"
 		].concat(suffixes);
 
-		return "The " + sample(prefixes) + " " + sample(suffixes) + (Math.random() >= 0.5 ? '–'+sample(suffixes) : '');
+		return "The " + sample(prefixes) + " " + sample(suffixes) + (Math.random() >= 0.5 ? '-'+sample(suffixes) : '');
 	}
 
 	function sample(arr){
 		return arr[Math.floor(Math.random() * arr.length)];
 	}
 
-	// var randomPaperName = getRandomPaperName();
 	var h1 = $$('h1')[0];
 	h1.setStyle('visibility', 'hidden');
 
 	$$('h1, head title').set('text', getRandomPaperName());
 
-	while(h1.clientHeight > 217){ //TODO solve for fontSize if possible
+	while(h1.clientHeight > 217){
 		h1.setStyle('fontSize', parseInt(h1.getStyle('fontSize'), 10) - 3);
 	}
 	h1.setStyle('visibility', 'visible');
